@@ -75,6 +75,7 @@ class FalViewHelper extends ResourcesFalViewHelper
             $localisation = $pageRepository->getPageOverlay($record, $this->getCurrentLanguageUid());
             if (is_array($localisation)) {
                 $record = $localisation;
+                $record["_LOCALIZED_UID"]=$record["_PAGES_OVERLAY_UID"];
             }
         }
         return $record;
